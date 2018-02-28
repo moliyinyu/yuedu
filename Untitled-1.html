@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+	 <script src="scripts/modernizr-1.6.min.js"></script>
+  <link rel="stylesheet" media="screen" href="styles/basic.css" />
+<style>
+tbody tr:nth-child(odd){ background:#c93;}
+tbody tr:nth-child(even){ background:#9cc;}
+tbody tr:hover{ background:default;}
+</style>
+<script>
+window.onload=function(){
+	var tbd=document.getElementsByTagName("tbody");
+	var trs=tbd[0].getElementsByTagName("tr");
+	for (var i=0;i<trs.length;i=i+2){
+		trs[i].className="odd";
+		}
+		for( var i=0;i<trs.length;i++){
+			trs[i].onmouseover=function(){
+				this,style.background="red"
+				};
+				trs[i].onmouseover=function(){
+				this,style.background=""}
+			}
+			var oWhen=document.getElementById("when");
+			var oWhere=document.getElementById("where");
+			var oAdd=document.getElementById("add");
+			oAdd.onclick=function(){
+				var sWhen=oWhen.value;
+				var sWhere=oWhere.value;
+				var oTr=document.createElement("tr");
+				var oTd=document.createElement("td");
+				oTd.innerHTML=sWhen;
+				oTr.appendChild(oTd);
+				var oTdwhere=document.createElement("td");
+				oTdwhere.innerHTML=sWhere;
+				oTr.appendChild(oTdwhere);
+				tbd[0].appendChild(oTr);
+				}
+	}
+	
+
+
+</script>
+
+
+</head>
+<body>
+  <table>
+    <caption>Itinerary</caption>
+    <thead>
+    <tr>
+      <th>When</th>
+      <th>Where</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>June 9th</td>
+      <td>Portland, <abbr title="Oregon">OR</abbr></td>
+    </tr>
+    <tr>
+      <td>June 10th</td>
+      <td>Seattle, <abbr title="Washington">WA</abbr></td>
+    </tr>
+    <tr>
+      <td>June 12th</td>
+      <td>Sacramento, <abbr title="California">CA</abbr></td>
+    </tr>
+    <tr>
+      <td>June 12th</td>
+      <td>Sacramento, <abbr title="California">CA</abbr></td>
+    </tr>
+    <tr>
+      <td>June 12th</td>
+      <td>Sacramento, <abbr title="California">CA</abbr></td>
+    </tr>
+    <tr>
+      <td>June 12th</td>
+      <td>Sacramento, <abbr title="California">CA</abbr></td>
+    </tr>
+    </tbody>
+   <tfoot>
+    <tr>
+      <td>统计数</td>
+      <td>统计数, <abbr title="California">CA</abbr></td>
+    </tr>
+    </tfoot>
+  </table>
+  <p>when<input type="text" id="when">where<input type="text" id="where"><input type="button" value="添加" id="add">
+</body>
+</html>
